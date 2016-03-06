@@ -27,6 +27,7 @@ int open(struct cdev *dev, int flag, int otyp, struct thread *td)
 {
     memset(&buf, '\0', 513);
     len = 0;
+    return 0;
 }
 
 int close(struct cdev *dev, int flag, int otyp, struct thread *td)
