@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     if (write(kernel_fd, argv[1], len) == -1) {
         perror("write()");
     } else {
-        printf("Write '%s' to device /dev/chard.\n", buf);
+        printf("Write '%s' to device /dev/chard.\n", argv[1]);
     }
 
     if (read(kernel_fd, buf, len) == -1) {
