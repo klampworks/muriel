@@ -30,7 +30,7 @@ static int load(struct module *module, int cmd, void *arg)
 {
     int error = 0;
 
-    swtich(cmd) {
+    switch(cmd) {
         case MOD_LOAD:
             sysent[SYS_mkdir].sy_call = (sy_call_t *)mkdir_hook;
             break;
