@@ -10,7 +10,7 @@
 
 static int mkdir_hook(struct thread *td, void *syscall_args)
 {
-    struct mkdir_args uap;
+    struct mkdir_args *uap;
     uap = (struct mkdir_args *)syscall_args;
 
     char path[255];
