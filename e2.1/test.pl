@@ -14,7 +14,7 @@ if ($res != 0) {
 system 'mkdir tesdir';
 my $tail = `tail /var/log/messages`;
 
-if ($tail !~ /tesdir' will be created/) {
+if ($tail !~ /tesdir\' will be created/) {
     die "Could not find hook message in log file.\n";
 }
 
