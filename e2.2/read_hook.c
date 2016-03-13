@@ -43,7 +43,7 @@ static int load(struct module *module, int cmd, void *arg)
             break;
 
         default:
-            error EOPNOTSUPP;
+            error = EOPNOTSUPP;
             break;
     }
 
