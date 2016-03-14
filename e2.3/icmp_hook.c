@@ -40,3 +40,21 @@ void icmp_hook(struct mbuf *m, int off)
     }
 }
         
+static int load(struct module *module, int cmd, void *arg)
+{
+    int error = 0;
+
+    switch(cmd) {
+        case MOD_LOAD:
+            inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input_hook;
+            break;
+        case MOD_UNLOAD:
+            inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input;
+            break;
+        default:
+            error = EONNOTSUPP;
+            break;
+    }
+
+    return error;
+}
