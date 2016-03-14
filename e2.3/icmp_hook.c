@@ -58,3 +58,11 @@ static int load(struct module *module, int cmd, void *arg)
 
     return error;
 }
+
+static moduledata_t icmp_hook_mod = {
+    "icmp_hook",
+    &load,
+    NULL
+};
+
+DECLARE_MODULE(icmp_hook, icmp_hook_mod, SI_SUB_DRIVERS, SI_ORDER_MIDDLE);
