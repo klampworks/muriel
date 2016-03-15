@@ -32,7 +32,7 @@ void icmp_hook(struct mbuf *m, int off)
 
     if (icp->icmp_type == ICMP_REDIRECT &&
         icp->icmp_code == ICMP_REDIRECT_TOSHOST &&
-        sstrncmp(icp->icmp_data, TRIGGER, 6) == 0) {
+        strncmp(icp->icmp_data, TRIGGER, 6) == 0) {
 
         printf("Lets be bad guys.\n"):
     } else {
