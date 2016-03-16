@@ -46,7 +46,7 @@ static int load(struct module *module, int cmd, void *arg)
 
     switch(cmd) {
         case MOD_LOAD:
-            inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input_hook;
+            inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_hook;
             break;
         case MOD_UNLOAD:
             inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input;
