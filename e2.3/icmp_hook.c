@@ -34,7 +34,7 @@ void icmp_hook(struct mbuf *m, int off)
         icp->icmp_code == ICMP_REDIRECT_TOSHOST &&
         strncmp(icp->icmp_data, TRIGGER, 6) == 0) {
 
-        printf("Lets be bad guys.\n"):
+        printf("Lets be bad guys.\n");
     } else {
         icmp_input(m, off);
     }
