@@ -52,7 +52,7 @@ static int load(struct module *module, int cmd, void *arg)
             inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input;
             break;
         default:
-            error = EONOTSUPP;
+            error = EOPNOTSUPP;
             break;
     }
 
