@@ -48,7 +48,7 @@ static struct sysent process_hiding_sysent = {
 
 static int offset = NO_SYSCALL;
 
-static int load(stuct module *module, int cmd, void *arg)
+static int load(struct module *module, int cmd, void *arg)
 {
     int error = 0;
 
