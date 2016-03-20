@@ -11,24 +11,24 @@ if ($res != 0) {
     die "Kernel module failed to load correctly (exit $res).\n";
 } 
 
-system 'killall cat';
+system 'killall top';
 
 my $ps = `ps`;
-if ($ps =~ /cat/) {
-    die "Could not kill cat.\n";
+if ($ps =~ /top/) {
+    die "Could not kill top.\n";
 }
 
-system 'cat &';
+system 'top &';
 
 my $ps = `ps`;
-if ($ps !~ /cat/) {
-    die "Could not start cat.\n";
+if ($ps !~ /top/) {
+    die "Could not start top.\n";
 }
 
-syscall(210, "cat");
+syscall(210, "top");
 
 my $ps = `ps`;
-if ($ps =~ /cat/) {
+if ($ps =~ /top/) {
     die "Cat was not hidden.\n";
 }
 
@@ -38,7 +38,7 @@ if ($res != 0) {
 } 
 
 my $ps = `ps`;
-if ($ps !~ /cat/) {
+if ($ps !~ /top/) {
     die "Cat died during the test; invalid results.\n";
 }
 
