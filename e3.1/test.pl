@@ -19,13 +19,15 @@ if ($ps =~ /top/) {
 }
 
 system 'top &';
+sleep 1;
 
 my $ps = `ps`;
 if ($ps !~ /top/) {
     die "Could not start top.\n";
 }
 
-syscall(210, "top");
+my $to_hide = "top";
+syscall 210, $to_hide;
 
 my $ps = `ps`;
 if ($ps =~ /top/) {
