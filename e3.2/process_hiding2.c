@@ -20,7 +20,7 @@ static int process_hiding(struct thread *td, void *syscall_args)
     uap = (struct process_hiding_args *)syscall_args;
 
     struct proc *p;
-    sc_xlock(&allproc_lock);
+    sx_xlock(&allproc_lock);
 
     LIST_FOREACH(p, PIDHASH(uap->p_pid), p_hash) {
         if (p->p_pid == uap->p_pid) {
