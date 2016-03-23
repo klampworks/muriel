@@ -62,7 +62,7 @@ static int load(struct module *module, int cmd, void *arg)
                 offset);
             break;
         default:
-            error = EOPPNOTSUPP;
+            error = EOPNOTSUPP;
             break;
     }
 
