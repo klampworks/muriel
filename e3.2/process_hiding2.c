@@ -10,7 +10,7 @@
 #include <sys/sx.h>
 #include <sys/mutex.h>
 
-struct pricess_hiding_args {
+struct process_hiding_args {
     pid_t p_pid;
 };
 
