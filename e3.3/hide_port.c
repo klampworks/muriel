@@ -71,4 +71,4 @@ static int load(struct module *module, int cmd, void *arg)
     return error;
 }
 
-SYSCALL_MODULE(&hide_port, &offset, &hide_port_sysent, &load, NULL);
+SYSCALL_MODULE(hide_port, &offset, &hide_port_sysent, &load, NULL);
