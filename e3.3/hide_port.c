@@ -23,7 +23,7 @@ static int hide_port(struct thread *td, void *args)
     struct hide_port_args *uap;
     uap = (struct hide_port_args *)args;
 
-    struct inpcb = *inpb;
+    struct inpcb *inpb;
 
     INP_INFO_WLOCK(&tcbinfo);
 
