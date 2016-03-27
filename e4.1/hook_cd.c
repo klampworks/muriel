@@ -28,10 +28,11 @@ static int load(struct module *module, int cmd, void *args)
 
     switch (cmd) {
         case MOD_LOAD:
+            
             mtx_lock(&devmtx);
 
             TAILQ_FOREACH(cdp, &cdevp_list, cdp_list) {
-                if (strcmp(cdp->cdp_c.si_name, "cd_example") == 0) {
+                if (strcmp(cdp->cdp_c.si_name, "null") == 0) {
                     read = cdp->cdp_c.si_devsw->d_read;
                     cdp->cdp_c.si_devsw->d_read = read_hook;
                     break;
@@ -45,7 +46,7 @@ static int load(struct module *module, int cmd, void *args)
             mtx_lock(&devmtx);
 
             TAILQ_FOREACH(cdp, &cdevp_list, cdp_list) {
-                if (strcmp(cdp->cdp_c.si_name, "cd_example") == 0) {
+                if (strcmp(cdp->cdp_c.si_name, "null") == 0) {
                     cdp->cdp_c.si_devsw->d_read = read;
                     break;
                 }
