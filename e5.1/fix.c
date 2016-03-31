@@ -18,7 +18,7 @@ int main()
     struct nlist n1[] = {{NULL}, {NULL}};
     unsigned char hello_code[SIZE];
 
-    kd = kvm_openfiles(NULL, NULL, NULL, 0_RDWR, errbuf);
+    kd = kvm_openfiles(NULL, NULL, NULL, O_RDWR, errbuf);
     if (!kd) {
         fprintf(stderr, "ERROR: %s\n", errbuf);
         exit 1;
