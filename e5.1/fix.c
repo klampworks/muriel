@@ -36,7 +36,7 @@ int main()
         exit(1);
     }
 
-    if (kvm_read(kd, n1[0].n_value, hello_code) < 0) {
+    if (kvm_read(kd, n1[0].n_value, hello_code, SIZE) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
         exit(1);
     }
