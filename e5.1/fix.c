@@ -21,24 +21,24 @@ int main()
     kd = kvm_openfiles(NULL, NULL, NULL, O_RDWR, errbuf);
     if (!kd) {
         fprintf(stderr, "ERROR: %s\n", errbuf);
-        exit 1;
+        exit(1);
     }
 
     n1[0].n_name = "hello";
 
     if (kvm_nlist(kd, n1) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
-        exit 1;
+        exit(1);
     }
 
     if (!n1[0].n_value) {
         fprintf(stderr, "ERROR: Symbol %s not found.\n", n1[0].n_name);
-        exit 1;
+        exit(1);
     }
 
     if (kvm_read(kd, n1[0].n_value, hello_code) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
-        exit 1;
+        exit(1);
     }
 
     unsigned char jns = 0x79;
@@ -53,13 +53,13 @@ int main()
         sizeof(nop_code) - 1) < 0) {
         
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
-        exit 1;
+        exit(1);
     }
 
     if (kvm_close(kd) < 0) {
         printf(stderr, "ERROR: %s\n", kvm_geterr(kd));
-        exit 1;
+        exit(1);
     }
 
-    exit 0;
+    exit(0);
 }
