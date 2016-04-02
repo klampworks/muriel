@@ -57,7 +57,7 @@ int main()
     }
 
     if (kvm_close(kd) < 0) {
-        printf(stderr, "ERROR: %s\n", kvm_geterr(kd));
+        fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
         exit(1);
     }
 
