@@ -7,7 +7,7 @@
 
 #define SIZE 0x30
 
-unsigned char not_code[] = "\x90\x90";
+unsigned char nop_code[] = "\x90\x90";
 
 int main()
 {
