@@ -14,7 +14,7 @@ int main()
     int i, jns_offset, call_offset;
     char errbuf[_POSIX2_LINE_MAX];
     kvm_t *kd;
-    struct nlist nl[] = {{NULL}, {NULL}, {NULL}};
+    struct nlist n1[] = {{NULL}, {NULL}, {NULL}};
     unsigned char hello_code[SIZE], call_operand[4];
 
     kd = kvm_openfiles(NULL, NULL, NULL, O_RDWR, errbuf);
