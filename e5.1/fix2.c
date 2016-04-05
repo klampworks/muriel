@@ -26,7 +26,7 @@ int main()
     n1[0].n_name = "hello";
     n1[1].n_name = "uprintf";
 
-    if (kvm_nlist(kd, nl) < 0) {
+    if (kvm_nlist(kd, n1) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
         exit(1);
     }
