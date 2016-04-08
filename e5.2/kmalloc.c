@@ -20,7 +20,7 @@ static int kmalloc(struct thread *td, void *args)
     int error;
     unsigned long addr;
 
-    MALLOC(addr, unsigned long, uap_size, M_TEMP, M_NOWAIT);
+    MALLOC(addr, unsigned long, uap->size, M_TEMP, M_NOWAIT);
     error = copyout(&addr, uap->addr, sizeof(addr));
 
     return error;
