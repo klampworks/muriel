@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     int syscall_num;
     struct module_stat stat;
 
-    unsigned ling addr;
+    unsigned long addr;
 
     if (argc != 2) {
         printf("Usage:\n%s <size>\n", argv[0]);
