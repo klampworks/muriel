@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     modstat(modfind("kmalloc"), &stat);
     syscall_num = stat.data.intval;
 
-    syscall(syscall_num, atoi(argv[1]), &addr)
+    syscall(syscall_num, atoi(argv[1]), &addr);
     printf("Address of allocated kernel memory: 0x%x\n", addr);
 
     return 0;
