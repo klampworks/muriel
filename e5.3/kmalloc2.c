@@ -51,7 +51,7 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-    kd = kvm_openfile(NULL, NULL, NULL, O_RDWR, errbuf);
+    kd = kvm_openfiles(NULL, NULL, NULL, O_RDWR, errbuf);
     if (!kd) {
         fprintf(stderr, "ERROR: %s\n", errbuf);
         exit(1);
