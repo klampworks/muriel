@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 
     for (i = 0; i < 4; ++i) {
         if (!n1[i].n_value) {
-            fprintf("ERROR: Symbol %s not found.\n", n1[i].n_name);
+            fprintf(stderr, "ERROR: Symbol %s not found.\n", n1[i].n_name);
             exit(1);
         }
     }
