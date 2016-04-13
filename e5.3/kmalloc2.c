@@ -42,7 +42,7 @@ int main(int argc, char **argv)
     int i;
     char errbuf[_POSIX2_LINE_MAX];
     kvm_t *kd;
-    struct nlist n1[] = {};
+    struct nlist n1[5] = {};
     unsigned char mkdir_code[sizeof(kmalloc)];
     unsigned long addr;
 
