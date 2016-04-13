@@ -80,7 +80,7 @@ int main(int argc, char **argv)
     *(unsigned long *)&kmalloc[64] = n1[3].n_value
         - (n1[0].n_value + KMALLOC_CALL_OFFSET_2);
 
-    if (kvm_read(kd, n1[0].n_value, mkdir_code, sizeof(kmalloc)) < 0) {
+    if (kvm_read(kd, n1[0].n_value, mkdir_code, sizeof(mkdir_code)) < 0) {
         fprintf(stderr, "ERROR: %s\n.", kvm_geterr(kd));
         exit(1);
     }
