@@ -71,7 +71,7 @@ unsigned char jump[] =
 int main()
 {
     int i, call_offset;
-    char errbuf[_POSIX_LINE_MAX];
+    char errbuf[_POSIX2_LINE_MAX];
     kvm_t *kd;
     struct nlist n1[6] = {};
 
