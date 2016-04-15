@@ -90,7 +90,7 @@ int main()
     n1[3].n_name = "copyout";
     n1[4].n_name = "printf";
 
-    if (kvm_nlist(kd, nl) < 0) {
+    if (kvm_nlist(kd, n1) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
         exit(1);
     }
