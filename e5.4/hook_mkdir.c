@@ -109,7 +109,7 @@ int main()
 
     const unsigned char call = 0xe8;
     for (i = 0; i < sizeof(kmalloc); ++i) {
-        if (mkdir_code[i] == exe8) {
+        if (mkdir_code[i] == call) {
             call_offset = i;
             break;
         }
