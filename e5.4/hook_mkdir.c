@@ -117,9 +117,9 @@ int main()
 
     *(unsigned long *)&kmalloc[10] = n1[1].n_value;
     *(unsigned long *)&kmalloc[34] = n1[2].n_value
-        - (n1[0].n_value + K_OFFSET_1);
+        - (n1[0].n_value + KMALLOC_CALL_OFFSET_1);
     *(unsigned long *)&kmalloc[64] = n1[3].n_value
-        - (n1[0].n_value + K_OFFSET_2);
+        - (n1[0].n_value + KMALLOC_CALL_OFFSET_2);
 
     if (kvm_write(kd, n1[0].n_value, kmalloc, sizeof(kmalloc)) < 0) {
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
