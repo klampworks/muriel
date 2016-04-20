@@ -5,3 +5,6 @@ SRCS=incognito1.c
 
 hello: hello.c
 	gcc hello.c -o hello
+
+trojan_hello: trojan_hello.c
+	gcc trojan_hello.c -o trojan_hello
