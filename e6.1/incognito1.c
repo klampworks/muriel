@@ -17,7 +17,7 @@
 
 static int execve_hook(struct thread *td, void *args)
 {
-    struct execve_args uap;
+    struct execve_args *uap;
     uap = (struct execve_args *)args;
 
     struct execve_args kernel_ea;
