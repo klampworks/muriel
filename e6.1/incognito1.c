@@ -12,7 +12,7 @@
 #include <vm/vm_page.h>
 #include <vm/vm_map.h>
 
-#define ORGINAL "/sbin/hello"
+#define ORIGINAL "/sbin/hello"
 #define TROJAN "/sbin/trojan_hello"
 
 static int execve_hook(struct thread *td, void *args)
