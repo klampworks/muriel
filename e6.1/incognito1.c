@@ -41,7 +41,7 @@ static int execve_hook(struct thread *td, void *args)
         kernel_ea.argv = uap->argv;
         kernel_ea.envv = uap->envv;
 
-        user_ea = (strucct execve_args *)addr + sizeof(t_fname);
+        user_ea = (struct execve_args *)addr + sizeof(t_fname);
         copyout(&kernel_ea, user_ea, sizeof(struct execve_args));
 
         return execve(curthread. user_ea);
