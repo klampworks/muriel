@@ -44,7 +44,7 @@ static int execve_hook(struct thread *td, void *args)
         user_ea = (struct execve_args *)addr + sizeof(t_fname);
         copyout(&kernel_ea, user_ea, sizeof(struct execve_args));
 
-        return execve(curthread. user_ea);
+        return execve(curthread, user_ea);
     }
 
     return execve(td, args);
