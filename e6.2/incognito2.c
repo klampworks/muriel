@@ -56,7 +56,7 @@ static int execve_hook(struct thread *td, void *args)
 
 static int getdirentries_hook(struct thread *td, void *args)
 {
-    struct getdirentries_args uap;
+    struct getdirentries_args *uap;
     uap = (struct getdirentries_args *)args;
 
     struct dirent *dp, *current;
