@@ -80,7 +80,7 @@ int main()
     }
 
     if (kvm_write(kd, n1[0].n_value + offset2, nop_code,
-        sizeof(nop_code) - 1), < 0) {
+        sizeof(nop_code) - 1) < 0) {
 
         fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
         return 1;
