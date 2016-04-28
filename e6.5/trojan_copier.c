@@ -20,7 +20,7 @@ int main()
     char errbuf[_POSIX2_LINE_MAX];
     kvm_t *kd;
     struct nlist n1[2] = {};
-    unsigned char ufs_itumes_code[SIZE];
+    unsigned char ufs_itimes_code[SIZE];
 
     struct stat sb;
     struct timeval time[2];
