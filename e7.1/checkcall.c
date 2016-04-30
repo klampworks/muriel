@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     printf("sysent[%d] is at 0x%1x and its sy_call member points to "
         "%p\n", callnum, addr, call.sy_call);
 
-    if ((uintptr_t)call.sy_call !- n1[1].n_value) {
+    if ((uintptr_t)call.sy_call != n1[1].n_value) {
         printf("ALERT! It should point to 0x%1x instead\n", n1[1].n_value);
 
         if (argv[3] &&strncmp(argv[3], "fix", 3) == 0) {
