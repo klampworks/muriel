@@ -92,7 +92,7 @@ int main(int argc, char **argv)
 
 void usage()
 {
-    fprintf(stderrm "Usage:\ncheckcall [system call function] "
+    fprintf(stderr, "Usage:\ncheckcall [system call function] "
         "[call number] <fix>\n\n");
     fprintf(stderr, "For a list of system call numbers see "
         "/sys/sys/syscall.h\n");
